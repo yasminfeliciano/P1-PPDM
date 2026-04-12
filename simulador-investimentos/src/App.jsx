@@ -42,7 +42,7 @@ const App = () => {
     };
 
     //passa a função calcular via props
-    //mostra o resultado final
+    //mostra o resultado final + histórico
     return(
         <div className="container">
             <h1 className="text-center mt-3">Hello, Investimentos</h1>
@@ -53,12 +53,6 @@ const App = () => {
                 </div>
                 <div>
                     <ExibeDados resultado={resultado} historico={historico}/>
-                    {
-                    /*<p>Valor final: R$ {resultado.montante}</p>
-                    <p>Juros: R$ {resultado.juros}</p>
-                    <p>Rentabilidade: {resultado.rentabilidade}%</p>
-                    */
-                    }
                 </div>
             </div>
         </div>
