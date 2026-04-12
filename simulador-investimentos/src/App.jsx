@@ -37,7 +37,7 @@ const App = () => {
                     valor: montante,
                     data:new Date().toLocaleString()
                 }
-            ]
+            ].concat(prevHistorico)
         );
     };
 
