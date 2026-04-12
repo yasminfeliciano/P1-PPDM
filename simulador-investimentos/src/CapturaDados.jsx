@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 
 const CapturaDados = (props) => {
+    //aqui vai armazenar o que o usuário digita
     const [inicial, setInicial] = useState(0);
     const [aporte, setAporte] = useState(0);
     const [taxa, setTaxa] = useState(0);
     const [periodo, setPeriodo] = useState(0);
 
+    //função para enviar os dados para fazer o cálculo
     const enviar = () => {
+        //exibe os dados no console (para verificar se está funcionando)
         console.log({
         inicial,
         aporte,
@@ -14,7 +17,9 @@ const CapturaDados = (props) => {
         periodo
         });
         
-        props.setDados({
+        //agora vou fazer o calculo com os numeros convertidos
+        //essa função veio do App
+        props.onCalcular({
             inicial: Number(inicial),
             aporte: Number(aporte),
             taxa: Number(taxa),
@@ -23,6 +28,7 @@ const CapturaDados = (props) => {
     };
 
     return (
+        //aqui é onde estão os inputs para pegar os valores da simulação
         <div>
             <h3>Simulação</h3>
 
