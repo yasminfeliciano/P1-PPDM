@@ -7,6 +7,13 @@ const CapturaDados = (props) => {
     const [periodo, setPeriodo] = useState(0);
 
     const enviar = () => {
+        console.log({
+        inicial,
+        aporte,
+        taxa,
+        periodo
+        });
+        
         props.setDados({
             inicial: Number(inicial),
             aporte: Number(aporte),
