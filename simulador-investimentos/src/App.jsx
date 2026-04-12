@@ -5,6 +5,7 @@ import ExibeDados from "./ExibeDados";
 const App = () => {
     //guarda o resultado final da simulação
     const [resultado, setResultado] = useState(0);
+    //guarda o histórico da simulação
     const [historico, sethistorico] = useState([])
 
     //função para receber os dados do formulário
@@ -41,6 +42,12 @@ const App = () => {
         );
     };
 
+    //Limpa o historico
+    const limpar = () =>{
+        setResultado(0);
+        sethistorico([]);
+    }
+
     //passa a função calcular via props
     //mostra o resultado final + histórico
     return(
@@ -49,9 +56,9 @@ const App = () => {
             
             <div className="row">
                 <div className="col-md-6">
-                    <CapturaDados onCalcular={calcular}/>
+                    <CapturaDados onCalcular={calcular} onLimpar={limpar}/>
                 </div>
-                <div>
+                <div className="col-md-6">
                     <ExibeDados resultado={resultado} historico={historico}/>
                 </div>
             </div>
