@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import CapturaDados from "./CapturaDados";
+import ExibeDados from "./ExibeDados";
 
 const App = () => {
     //guarda o resultado final da simulação
@@ -41,9 +42,13 @@ const App = () => {
                     <CapturaDados onCalcular={calcular}/>
                 </div>
                 <div>
-                    <p>Valor final: R$ {resultado.montante}</p>
+                    <ExibeDados resultado={resultado}/>
+                    {
+                    /*<p>Valor final: R$ {resultado.montante}</p>
                     <p>Juros: R$ {resultado.juros}</p>
                     <p>Rentabilidade: {resultado.rentabilidade}%</p>
+                    */
+                    }
                 </div>
             </div>
         </div>
