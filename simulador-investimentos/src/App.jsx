@@ -10,7 +10,7 @@ const App = () => {
             
             <div className="row">
                 <div className="col-md-6">
-                    <CapturaDados/>
+                    <CapturaDados setDados={setDados}/>
                 </div>
             </div>
         </div>
