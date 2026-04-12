@@ -5,6 +5,7 @@ import ExibeDados from "./ExibeDados";
 const App = () => {
     //guarda o resultado final da simulação
     const [resultado, setResultado] = useState(0);
+    const [historico, sethistorico] = useState([])
 
     //função para receber os dados do formulário
     const calcular = (dados) => {
@@ -29,6 +30,15 @@ const App = () => {
             rentabilidade,
             aportes: periodo
         });
+
+        sethistorico((prevHistorico) =>
+            [
+                {
+                    valor: montante,
+                    data:new Date().toLocaleString()
+                }
+            ]
+        );
     };
 
     //passa a função calcular via props
@@ -42,7 +52,7 @@ const App = () => {
                     <CapturaDados onCalcular={calcular}/>
                 </div>
                 <div>
-                    <ExibeDados resultado={resultado}/>
+                    <ExibeDados resultado={resultado} historico={historico}/>
                     {
                     /*<p>Valor final: R$ {resultado.montante}</p>
                     <p>Juros: R$ {resultado.juros}</p>
