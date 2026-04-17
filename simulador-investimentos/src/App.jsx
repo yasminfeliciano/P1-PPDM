@@ -32,14 +32,14 @@ const App = () => {
             aportes: periodo
         });
 
-        sethistorico((prevHistorico) =>
+        /*sethistorico((prevHistorico) =>
             [
                 {
                     valor: montante,
                     data:new Date().toLocaleString()
                 }
             ].concat(prevHistorico)
-        );
+        );*/
     };
 
     //Limpa o historico
